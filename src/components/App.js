@@ -7,7 +7,9 @@ const App = () => {
       <div>Rooot component</div>
       <a href="#1">
         Link content that references <br />
-        <a href="#2"> another link </a>
+        <object>
+          <a href="#2"> another link </a>
+        </object>
         within the main one.
       </a>
       <div className="post-link">
