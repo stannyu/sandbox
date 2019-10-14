@@ -2,7 +2,7 @@ import React from 'react';
 import './Stories.scss';
 
 import Story from './Story';
-import StoryHeader from './StoryHeader';
+import StoryHeaders from './StoryHeader';
 
 const COLUMNS = {
   title: {
@@ -22,22 +22,17 @@ const COLUMNS = {
     width: '10%'
   },
   archive: {
+    label: 'Archive',
     width: '10%'
   }
 };
 
 const Stories = ({ stories }) => {
-  const storiesListHeaders = (
-    <div className="stories-header">
-      {Object.keys(COLUMNS).map(key => (
-        <StoryHeader key={key} column={COLUMNS[key]} />
-      ))}
-    </div>
-  );
   const storiesList = (stories || []).map(story => <Story key={story.objectID} story={story} columns={COLUMNS} />);
+
   return (
     <div className="stories">
-      {storiesListHeaders}
+      <StoryHeaders columns={COLUMNS} />
       {storiesList}
     </div>
   );

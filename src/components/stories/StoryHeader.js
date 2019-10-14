@@ -1,7 +1,16 @@
 import React from 'react';
+import './Stories.scss';
 
-const StoryHeader = ({ column }) => {
-  return <span style={{ width: column.width }}>{column.label}</span>;
+const StoryHeaders = ({ columns }) => {
+  return (
+    <div className="stories-header">
+      {Object.keys(columns).map(key => (
+        <span key={key} style={{ width: columns[key].width }}>
+          {columns[key].label}
+        </span>
+      ))}
+    </div>
+  );
 };
 
-export default StoryHeader;
+export default StoryHeaders;
