@@ -2,7 +2,8 @@ import React from 'react';
 import './Stories.scss';
 
 import { connect } from 'react-redux';
-import { getReadableStories } from '../../store/selectors/story';
+import { getReadableStories, getArchivedVisibilityState } from '../../store/selectors/story';
+import { changeArchivedVisibility } from '../../store/actions/archive';
 
 import Story from './Story';
 import StoryHeaders from './StoryHeader';
@@ -30,23 +31,30 @@ const COLUMNS = {
   }
 };
 
-const Stories = ({ stories, onArchive }) => {
-  const storiesList = (stories || []).map(story => (
-    <Story key={story.objectID} story={story} columns={COLUMNS}/>
-  ));
+const Stories = ({ stories, isArchivedVisible, changeVisibility }) => {
+  const storiesList = (stories || []).map(story => <Story key={story.objectID} story={story} columns={COLUMNS} />);
 
   return (
     <div className="stories">
       <StoryHeaders columns={COLUMNS} />
       {storiesList}
+      <p>Flag: {isArchivedVisible ? 'Visible' : 'Hidden'}</p>
+
+      <button onClick={() => changeVisibility(isArchivedVisible)}>Change Visibility</button>
     </div>
   );
 };
 
 const mapStateToProps = state => ({
-  stories: getReadableStories(state)
+  stories: getReadableStories(state),
+  isArchivedVisible: getArchivedVisibilityState(state)
+});
+
+const mapDispatchToProps = dispatch => ({
+  changeVisibility: isVisible => dispatch(changeArchivedVisibility(isVisible))
 });
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Stories);
