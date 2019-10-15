@@ -3,10 +3,10 @@ import Stories from './components/stories/Stories';
 
 import './assets/styles/styles.scss';
 
-const App = ({stories}) => {
+const App = () => {
   return (
     <div className='app'>
-      <Stories stories={stories} />
+      <Stories />
     </div>
   );
 };
