@@ -2,6 +2,7 @@ import React from 'react';
 import './Stories.scss';
 
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { getReadableStories, getArchivedVisibilityState } from '../../store/selectors/story';
 import { changeArchivedVisibility } from '../../store/actions/archive';
 
@@ -50,9 +51,17 @@ const mapStateToProps = state => ({
   isArchivedVisible: getArchivedVisibilityState(state)
 });
 
-const mapDispatchToProps = dispatch => ({
-  changeVisibility: isVisible => dispatch(changeArchivedVisibility(isVisible))
-});
+// const mapDispatchToProps = dispatch => ({
+//   changeVisibility: isVisible => dispatch(changeArchivedVisibility(isVisible))
+// });
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      changeVisibility: isVis => changeArchivedVisibility(isVis)
+    },
+    dispatch
+  );
 
 export default connect(
   mapStateToProps,
