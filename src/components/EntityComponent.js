@@ -3,9 +3,10 @@ import { useRouteMatch } from 'react-router-dom';
 
 const EntityComponent = () => {
   let match = useRouteMatch();
+  const showNestedParamsData = () => console.log(match);
   return (
     <div>
-      <p>ID: {match.params.id}</p>
+      <p onClick={showNestedParamsData}>ID: {match.params.id}</p>
     </div>
   );
 };

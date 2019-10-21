@@ -9,8 +9,9 @@ const PageOneComponent = props => {
 
   return (
     <div>
-      <Link to={`${match.url}/another`}>Just a lint to subroute</Link>
-      <Link to='/'>Home</Link>
+       - <Link to={`${match.url}/another`}>Just a lint to subroute</Link>
+      <br/>
+       - <Link to='/'>Home</Link>
       <p>PageOneComponent!!</p>
 
       <Route path={`${match.path}/another`} component={SubrouteComponent} />
@@ -20,6 +21,3 @@ const PageOneComponent = props => {
 };
 
 export default PageOneComponent;
-
-//<Link to={`${match.url}/another`}>Just a lint to subroute</Link>
-//<Link to="/page1">Just a lint to subroute</Link>

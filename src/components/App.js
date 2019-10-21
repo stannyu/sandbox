@@ -10,8 +10,8 @@ const App = () => {
       <p>Rooot component</p>
       <Router>
         <NavBar/>
-        <Route path='/page' component={PageOneComponent}/>
-        <Route path='/page1' component={PageTwoComponent}/>
+        <Route path='/page1' component={PageOneComponent}/>
+        <Route path='/page2' component={PageTwoComponent}/>
       </Router>
       {/*<PageOneComponent></PageOneComponent>*/}
     </div>
