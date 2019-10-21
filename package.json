@@ -18,7 +18,8 @@
     "babel-eslint": "^10.0.3",
     "prop-types": "^15.7.2",
     "react": "15.x || 16.x || 16.4.0-alpha.0911da3",
-    "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3"
+    "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3",
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
