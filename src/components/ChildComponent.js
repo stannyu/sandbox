@@ -13,7 +13,7 @@ const ChildComponent = ({ text }) => {
     ).catch(err => {
       let stringiError1 = err.toString();
       let stringiError = JSON.stringify(err);
-      console.log( stringiError, '!!!', stringiError1);
+      console.log( stringiError, '!!!', stringiError1, "or something else");
     });
   });
   return (
