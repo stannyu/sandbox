@@ -20,6 +20,7 @@ const ChildComponent = ({ text }) => {
     <div>
       <h2>Child component indeed! {a}</h2>
       <p>+1</p>
+      <p>+2</p>
       <h4>Text prop: {text}</h4>
     </div>
   );
