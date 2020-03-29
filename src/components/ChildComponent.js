@@ -1,4 +1,5 @@
 import React from 'react';
+import '../assets/styles/styles.scss';
 
 const ChildComponent = ({ text }) => {
   let a = 'Prettier setup';
